@@ -1,0 +1,47 @@
+Act 1: Say hello.
+
+	Video/Audio: Hello, Let,s make tetris.	
+	
+Act 2: Show the game.
+
+	Video: 
+
+	Audio:	
+	
+	This is the final result so far, I have done the menu, the game, and the game over g_window.
+	Let's play a game. As you can see, all logic of the game is implemented, scoring system, sound, and music. Everything is working perfectly.
+
+
+Act 4: Check dependencies.
+
+	Video:
+
+	sudo apt install build-essential
+	sudo apt install cmake
+	sudo apt install libsfml-dev
+
+	Audio:
+		
+	We need to verify if the project dependencies are already installed.
+	The first one is the build-essential pack. This pack installs the c++ compiler.
+	The second one is the CMake app, which serves to facilitate the compilation process.
+	The third one is the SFML game library, which is necessary to create the program Window, the game graphics and,  play the game sounds.
+
+	
+Act 5: Create project
+
+	Audio:
+	
+	We need to open the vscode and create a new project folder called "nes-tetris",
+	now I will create the include folder, the source folder and, the CMakeLists.txt file.
+	Initialize the
+	Create folder include and source
+	Create file CMakeLists.txt
+	
+		
+Populate the cmake project
+
+
+
+	
+
