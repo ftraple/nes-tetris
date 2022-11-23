@@ -3,7 +3,7 @@
 namespace tetris {
 
 Score::Score(std::shared_ptr<sf::RenderWindow> window, const sf::Font& font)
-: m_window{window} {
+    : m_window{window} {
     std::stringstream str;
 
     m_text_a_type.setFont(font);

@@ -26,12 +26,12 @@ inline MenuOption& operator--(MenuOption& option, int) {
 }
 
 class Menu {
-    public:
+   public:
     Menu(std::shared_ptr<sf::RenderWindow> window, const sf::Font& font);
 
     void run();
 
-    private:
+   private:
     std::shared_ptr<sf::RenderWindow> m_window;
     const sf::Font& m_font;
     sf::Texture m_title_texture;

@@ -31,4 +31,4 @@ inline std::map<BlockType, sf::Color> BlockColor{
 
 };  // namespace tetris
 
-#endif  //TETRIS_INCLUDE_BLOCK_TYPE_HPP_
+#endif  // TETRIS_INCLUDE_BLOCK_TYPE_HPP_

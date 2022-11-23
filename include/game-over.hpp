@@ -2,20 +2,20 @@
 #define TETRIS_INCLUDE_GAME_OVER_HPP_
 
 #include <SFML/Graphics.hpp>
-#include <sstream>
 #include <memory>
+#include <sstream>
 
 namespace tetris {
 
 class GameOver {
-    public:
+   public:
     GameOver(std::shared_ptr<sf::RenderWindow> window, const sf::Font& font);
 
     void run(int score, int level);
 
-    private:
+   private:
     std::shared_ptr<sf::RenderWindow> m_window;
-    bool m_is_runnig{false};
+    bool m_is_running{false};
     sf::Text m_text_type_a;
     sf::Text m_text_game_over;
     sf::Text m_text_record;

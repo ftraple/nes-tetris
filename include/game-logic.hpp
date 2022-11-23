@@ -20,14 +20,14 @@
 namespace tetris {
 
 class GameLogic {
-    public:
+   public:
     GameLogic(std::shared_ptr<sf::RenderWindow> window, const sf::Font& font, int grid_pixel_amount);
 
     bool isPlaying();
 
     void run();
 
-    private:
+   private:
     std::shared_ptr<sf::RenderWindow> m_window;
     const sf::Font& m_font;
     int m_grid_pixel_amount;
@@ -42,7 +42,7 @@ class GameLogic {
     int m_soft_drop_end{0};
     sf::Clock m_clock;
     sf::Text m_text_next;
-    bool m_is_runnig{false};
+    bool m_is_running{false};
 
     sf::SoundBuffer m_sound_move_buffer;
     sf::Sound m_sound_move;
@@ -64,7 +64,7 @@ class GameLogic {
 
     void draw();
 
-    void moveBotton();
+    void moveBottom();
 
     void updateSpeed();
 };

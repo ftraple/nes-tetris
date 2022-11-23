@@ -75,7 +75,7 @@ void PlayField::addTetromino(const Tetromino& tetromino) {
     }
 }
 
-int PlayField::removeCompleLines(const Tetromino& tetromino) {
+int PlayField::removeCompleteLines(const Tetromino& tetromino) {
     int lines_removed{0};
     int tetromino_y = tetromino.y() - m_y;
     int tetromino_matrix_dimension = tetromino.matrixDimension();

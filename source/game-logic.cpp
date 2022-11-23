@@ -49,8 +49,8 @@ GameLogic::GameLogic(std::shared_ptr<sf::RenderWindow> window, const sf::Font& f
 }
 
 void GameLogic::run() {
-    m_is_runnig = true;
-    while (m_window->isOpen() && m_is_runnig) {
+    m_is_running = true;
+    while (m_window->isOpen() && m_is_running) {
         draw();
         update();
         event();
@@ -59,7 +59,7 @@ void GameLogic::run() {
 
 void GameLogic::event() {
     sf::Event event;
-    while (m_window->pollEvent(event) && m_is_runnig) {
+    while (m_window->pollEvent(event) && m_is_running) {
         if (event.type == sf::Event::Closed) {
             m_window->close();
             break;
@@ -80,21 +80,21 @@ void GameLogic::event() {
                     m_sound_move.play();
                 }
             } else if (event.key.code == sf::Keyboard::Z) {
-                m_tetromino.rotateAntiClockwize();
+                m_tetromino.rotateAntiClockwise();
                 if (checkMatrixOverlap(m_tetromino, m_play_field)) {
-                    m_tetromino.rotateClockwize();
+                    m_tetromino.rotateClockwise();
                 } else {
                     m_sound_rotate.play();
                 }
             } else if (event.key.code == sf::Keyboard::X) {
-                m_tetromino.rotateClockwize();
+                m_tetromino.rotateClockwise();
                 if (checkMatrixOverlap(m_tetromino, m_play_field)) {
-                    m_tetromino.rotateAntiClockwize();
+                    m_tetromino.rotateAntiClockwise();
                 } else {
                     m_sound_rotate.play();
                 }
             } else if (event.key.code == sf::Keyboard::Down) {
-                moveBotton();
+                moveBottom();
                 if (!m_soft_drop_active) {
                     m_soft_drop_active = true;
                     m_soft_drop_start = m_tetromino.y();
@@ -110,8 +110,8 @@ void GameLogic::event() {
     }
 }
 
-void GameLogic::moveBotton() {
-    m_tetromino.moveBotton();
+void GameLogic::moveBottom() {
+    m_tetromino.moveBottom();
     if (checkMatrixOverlap(m_tetromino, m_play_field)) {
         m_tetromino.moveUp();
         // Check if the game is over.
@@ -119,12 +119,12 @@ void GameLogic::moveBotton() {
             m_music_1.stop();
             GameOver game_over(m_window, m_font);
             game_over.run(m_score.score(), m_score.level());
-            m_is_runnig = false;
+            m_is_running = false;
             return;
         }
         m_sound_drop.play();
         m_play_field.addTetromino(m_tetromino);
-        int total_lines_removed = m_play_field.removeCompleLines(m_tetromino);
+        int total_lines_removed = m_play_field.removeCompleteLines(m_tetromino);
         if (total_lines_removed > 0) {
             m_sound_clear_line.play();
             m_score.increasePointsForLine(total_lines_removed);
@@ -151,7 +151,7 @@ void GameLogic::update() {
     uint32_t elapse = m_clock.getElapsedTime().asMilliseconds();
     if (elapse > m_tetromino_elapse + m_speed) {
         m_tetromino_elapse = elapse;
-        moveBotton();
+        moveBottom();
     }
 }
 

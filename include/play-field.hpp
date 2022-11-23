@@ -4,8 +4,8 @@
 #include <SFML/Graphics.hpp>
 #include <cstdint>
 #include <cstring>
-#include <vector>
 #include <memory>
+#include <vector>
 
 #include "block.hpp"
 #include "tetromino.hpp"
@@ -13,9 +13,9 @@
 namespace tetris {
 
 class PlayField {
-    public:
+   public:
     PlayField(std::shared_ptr<sf::RenderWindow> window,
-        int x, int y, int width, int height, int grid_pixel_amount);
+              int x, int y, int width, int height, int grid_pixel_amount);
 
     int x() const;
 
@@ -31,9 +31,9 @@ class PlayField {
 
     void addTetromino(const Tetromino& tetromino);
 
-    int removeCompleLines(const Tetromino& tetromino);
+    int removeCompleteLines(const Tetromino& tetromino);
 
-    private:
+   private:
     std::shared_ptr<sf::RenderWindow> m_window;
     int m_x;
     int m_y;

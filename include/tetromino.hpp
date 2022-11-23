@@ -4,8 +4,8 @@
 #include <SFML/Graphics.hpp>
 #include <cstdint>
 #include <map>
-#include <vector>
 #include <memory>
+#include <vector>
 
 #include "block.hpp"
 
@@ -14,7 +14,7 @@ namespace tetris {
 BlockType randowSelect();
 
 class Tetromino {
-    public:
+   public:
     Tetromino(std::shared_ptr<sf::RenderWindow> window,
               BlockType type, int x, int y, int grid_pixel_amount);
 
@@ -30,7 +30,7 @@ class Tetromino {
 
     int matrixDimension() const;
 
-    void moveBotton();
+    void moveBottom();
 
     void moveUp();
 
@@ -38,13 +38,13 @@ class Tetromino {
 
     void moveRight();
 
-    void rotateClockwize();
+    void rotateClockwise();
 
-    void rotateAntiClockwize();
+    void rotateAntiClockwise();
 
     void draw();
 
-    private:
+   private:
     std::shared_ptr<sf::RenderWindow> m_window;
     BlockType m_type;
     int m_initial_x;
@@ -61,4 +61,4 @@ class Tetromino {
 
 };  // namespace tetris
 
-#endif  //TETRIS_INCLUDE_TETROMINO_HPP_
+#endif  // TETRIS_INCLUDE_TETROMINO_HPP_

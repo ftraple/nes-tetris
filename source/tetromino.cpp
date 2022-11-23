@@ -107,7 +107,7 @@ int Tetromino::matrixDimension() const {
     return m_matrix_dimension;
 }
 
-void Tetromino::moveBotton() {
+void Tetromino::moveBottom() {
     m_y++;
 }
 
@@ -123,7 +123,7 @@ void Tetromino::moveRight() {
     m_x++;
 }
 
-void Tetromino::rotateClockwize() {
+void Tetromino::rotateClockwise() {
     std::vector<BlockType> matrix_tmp(m_matrix.begin(), m_matrix.end());
     int i = 0;
     for (int x = 0; x < m_matrix_dimension; x++) {
@@ -133,7 +133,7 @@ void Tetromino::rotateClockwize() {
     }
 }
 
-void Tetromino::rotateAntiClockwize() {
+void Tetromino::rotateAntiClockwise() {
     std::vector<BlockType> matrix_tmp(m_matrix.begin(), m_matrix.end());
     int i = 0;
     for (int x = m_matrix_dimension - 1; x >= 0; x--) {

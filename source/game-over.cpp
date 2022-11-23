@@ -2,7 +2,7 @@
 
 namespace tetris {
 
-GameOver::GameOver(std::shared_ptr<sf::RenderWindow> window, const sf::Font& font)
+GameOver::GameOver(std::shared_ptr<sf::RenderWindow> window, const sf::Font &font)
     : m_window{window} {
     m_text_type_a.setFont(font);
     m_text_type_a.setString("A-TYPE");
@@ -31,14 +31,14 @@ GameOver::GameOver(std::shared_ptr<sf::RenderWindow> window, const sf::Font& fon
 }
 
 void GameOver::run(int score, int level) {
-    m_is_runnig = true;
+    m_is_running = true;
     std::stringstream str;
     str << "SCORE: " << score << "   LEVEL: " << level;
     m_text_record.setString(str.str());
     m_text_record.setOrigin(m_text_record.getLocalBounds().width / 2.0f, 0.0f);
     m_text_record.setPosition(m_window->getSize().x / 2.0f, 400);
 
-    while (m_window->isOpen() && m_is_runnig) {
+    while (m_window->isOpen() && m_is_running) {
         draw();
         event();
     }
@@ -53,7 +53,7 @@ void GameOver::event() {
         }
         if (event.type == sf::Event::KeyPressed) {
             if (event.key.code == sf::Keyboard::Enter) {
-                m_is_runnig = false;
+                m_is_running = false;
             }
         }
     }
